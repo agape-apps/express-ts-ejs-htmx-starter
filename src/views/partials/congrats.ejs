@@ -4,19 +4,19 @@
     <%
     switch (counter) {
         case '1': %>
-        <button type="button" hx-get="/congrats/2" hx-swap="outerHTML" class="btn btn-secondary"> Well Done. </button>
+        <button type="button" hx-get="/congrats/2" hx-swap="innerHTML" hx-target="#content-swap" class="btn btn-secondary"> Well Done. </button>
         <% break %>
       
         <% case '2': %>
-        <button type="button" hx-get="/congrats/3" hx-swap="outerHTML" class="btn btn-accent"> Seems to work pretty well, right? </button>
+        <button type="button" hx-get="/congrats/3" hx-swap="innerHTML" hx-target="#content-swap" class="btn btn-accent"> Seems to work pretty well, right? </button>
         <% break %>
     
         <% case '3': %>
-        <button type="button" hx-get="/congrats/4" hx-swap="outerHTML" class="btn btn-warning"> Don't overdo it. </button>
+        <button type="button" hx-get="/congrats/4" hx-swap="innerHTML" hx-target="#content-swap" class="btn btn-warning"> Don't overdo it. </button>
         <% break %>
     
         <% case '4': %>
-        <p id="fade-me-in" hx-get='/congrats/5' hx-swap='innerHTML settle:1s' class="text-lg">
+        <p id="fade-me-in" hx-get='/congrats/5' hx-swap='innerHTML settle:1s' hx-target="#content-swap" class="text-lg">
             Told you. See how smooth this was though? 😎
         </p>
         <% break %>
