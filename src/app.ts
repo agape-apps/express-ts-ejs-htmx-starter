@@ -6,19 +6,12 @@ const app = express();
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
 
-// Determine if we're in production by checking if we're in the /server directory
-const isProduction = __dirname.includes('/server');
-
-// Set views directory - handle both development and production paths
-const viewsPath = isProduction
-  ? path.join(process.cwd(), 'src', 'views')
-  : path.join(process.cwd(), 'src', 'views');
+// Views Configuration
+const viewsPath = path.join(process.cwd(), 'src', 'views');
 app.set('views', viewsPath);
 
-// Serve static files from the "static" directory
-const staticPath = isProduction
-  ? path.join(process.cwd(), 'src', 'static')
-  : path.join(process.cwd(), 'src', 'static');
+// Static File Serving
+const staticPath = path.join(process.cwd(), 'src', 'static');
 app.use('/static', express.static(staticPath));
 
 // Render your views
