@@ -21,13 +21,13 @@
     "dev": "concurrently \"bun run watch:js\" \"bun run watch:css\" \"bun run watch:backend\""
   },
   "dependencies": {
+  },
+  "devDependencies": {
     "express": "^4.21.2",
     "express-react-views": "^0.11.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "styled-jsx": "^5.1.7"
-  },
-  "devDependencies": {
+    "styled-jsx": "^5.1.7",
     "@babel/preset-typescript": "^7.27.1",
     "@tailwindcss/cli": "^4.1.5",
     "@types/express": "^4.17.21",

@@ -38,9 +38,14 @@ bun run dev
 ### Best Practices for Production
 
 **Build for production**
+
 ```
-bun run build
 bun run serve
+```
+
+- Only needed files copied into a separate directory
+```
+bun run serve:production
 ```
 
 The minimal set of files and directories needed on your production server:
@@ -81,3 +86,25 @@ pm2 start dist/server.js --name "your-app-name"
 pm2 startup
 pm2 save
 ```
+
+## All devDependencies listed in package.json
+
+* **express**: Used in src/app.ts.
+* **express-react-views**: Used in src/app.ts.
+* **react**: Used for .tsx views and by express-react-views.
+* **react-dom**: Used for .tsx views and by express-react-views.
+* **styled-jsx**: Used as a Babel plugin in src/app.ts.
+* **@babel/preset-typescript**: Used as a Babel preset in src/app.ts.
+* **@types/express**: Used for type definitions in src/app.ts.
+* **@types/node**: Used for type definitions in src/app.ts.
+* **@types/react**: Used for type definitions in .tsx files.
+* **@types/react-dom**: Used for type definitions in .tsx files.
+* **alpinejs**: Imported and used in src/frontend/main.js.
+* **concurrently**: Used in package.json scripts (watch:frontend, dev).
+* **daisyui**: Used as a plugin in tailwind.config.js.
+* **esbuild**: Used in package.json scripts for building JavaScript.
+* **htmx.org**: Imported in src/frontend/main.js.
+* **nodemon**: Used in package.json scripts for watching backend changes.
+* **tailwindcss**: Used for styling, configured in tailwind.config.js, and its CLI is used in package.json scripts.
+* **ts-node**: Used in package.json scripts for running TypeScript files with Nodemon.
+* **typescript**: Used for compiling TypeScript files (e.g., build:backend script).
