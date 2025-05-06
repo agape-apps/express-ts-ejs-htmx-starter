@@ -8,8 +8,13 @@ const app = express();
 app.set('view engine', 'tsx');
 app.engine('tsx', reactViews.createEngine({
   babel: {
-    presets: ['@babel/preset-react', ['@babel/preset-env', { targets: { node: 'current' } }]],
+    presets: [
+      '@babel/preset-typescript', // Add preset-typescript for runtime compilation
+      '@babel/preset-react',
+      ['@babel/preset-env', { targets: { node: 'current' } }],
+    ],
     plugins: ['styled-jsx/babel'],
+    extensions: ['.tsx', '.jsx'], // Restrict runtime Babel to only these extensions
   },
 }));
 
