@@ -1,4 +1,4 @@
-# Express - TypeScript - EJS - HTMX - TailwindCSS/DaisyUI - Starter 🚀
+# Express - TypeScript - JSX - HTMX - TailwindCSS/DaisyUI - Starter 🚀
 A minimalistic node starter application for getting into HTMX.
 
 ---
@@ -6,22 +6,27 @@ A minimalistic node starter application for getting into HTMX.
 ### Setup Guide
 
 1. Make sure you have [Node.js](https://nodejs.org/en/download) and [Git](https://git-scm.com/downloads) and Bun installed on your machine.
+
 2. Open a terminal and clone this repository (alternatively download zip).
 ```
 git clone 
 ```
+
 3. **cd** into the project folder
 ```
 cd express-ts-ejs-htmx-starter
 ```
+
 4. Install the packages with **bun**
 ```
 bun install
 ```
-5. Start the server.
+
+5. Start the server watching for changes
 ```
 bun run dev
 ```
+
 6. Finally, open http://localhost:3000/ in your browser. Thats it!
 
 ### Other resources
@@ -31,8 +36,6 @@ bun run dev
 ---
 
 ### Best Practices for Production
-
-
 
 **Build for production**
 ```
@@ -62,18 +65,19 @@ production/
 
 ### Using Process Manager (Recommended)
 For better stability and performance in production, use a process manager like PM2:
+
 1. Install PM2 globally:
-```
-bashnpm install -g pm2
+```bash
+npm install -g pm2
 ```
 
 2. Start your application:
-```
-bashpm2 start dist/server.js --name "your-app-name"
+```bash
+pm2 start dist/server.js --name "your-app-name"
 ```
 
 3. Ensure it starts on system reboot:
-```
-bashpm2 startup
+```bash
+pm2 startup
 pm2 save
 ```

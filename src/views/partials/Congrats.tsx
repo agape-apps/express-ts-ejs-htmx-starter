@@ -72,15 +72,6 @@ const Congrats: React.FC<CongratsProps> = ({ counter }) => {
     <div className="p-4">
       <p className="mb-4">Congratulations! You have successfully setup express-ts-jsx-htmx.</p>
       {content}
-      <style jsx global>{`
-        #fade-me-in.htmx-added {
-          opacity: 0;
-        }
-        #fade-me-in {
-          opacity: 1;
-          transition: opacity 1.5s ease-out;
-        }
-      `}</style>
     </div>
   );
 };

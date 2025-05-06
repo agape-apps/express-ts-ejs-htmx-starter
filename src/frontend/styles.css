@@ -5,3 +5,12 @@
   themes: all;
 }
 
+
+/* Styles for HTMX fade-in effect */
+#fade-me-in.htmx-added {
+  opacity: 0;
+}
+#fade-me-in {
+  opacity: 1;
+  transition: opacity 1.5s ease-out;
+}

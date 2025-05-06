@@ -10,8 +10,10 @@
     "build:backend": "tsc --project tsconfig.json && esbuild dist/app.js --bundle --platform=node --format=cjs --outfile=server/server.js --external:@babel/* --external:source-map-support --external:react --external:react-dom",
     "build": "bun run build:frontend && bun run build:backend",
     "serve": "bun run build && node server/server.js",
+
     "build:production": "bun run build && rm -rf production && mkdir -p production/server production/src/static production/src/views && cp src/static/app.css production/src/static/ && cp src/static/app.js production/src/static/ && cp -r src/views/* production/src/views/ && cp server/server.js production/server/ && cp .env production/",
     "serve:production": "bun run build:production && node production/server/server.js",
+    
     "watch:js": "esbuild src/frontend/main.js --bundle --sourcemap --outfile=src/static/app.js --watch",
     "watch:css": "bunx tailwindcss -i ./src/frontend/styles.css -o ./src/static/app.css --watch",
     "watch:frontend": "concurrently \"bun run watch:js\" \"bun run watch:css\"",

@@ -1133,6 +1133,13 @@
     --btn-fg: var(--color-warning-content);
   }
 }
+#fade-me-in.htmx-added {
+  opacity: 0;
+}
+#fade-me-in {
+  opacity: 1;
+  transition: opacity 1.5s ease-out;
+}
 @layer base {
   :where(:root),:root:has(input.theme-controller[value=light]:checked),[data-theme=light] {
     color-scheme: light;
