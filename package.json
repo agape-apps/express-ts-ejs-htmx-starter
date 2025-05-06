@@ -4,11 +4,11 @@
   "main": "src/app.ts",
   "license": "MIT",
   "scripts": {
-    "build:js": "esbuild frontend/main.js --bundle --minify --sourcemap --outfile=static/app.js",
-    "build:css": "bunx tailwindcss -i ./frontend/styles.css -o ./static/app.css --minify",
+    "build:js": "esbuild src/frontend/main.js --bundle --minify --sourcemap --outfile=src/static/app.js",
+    "build:css": "bunx tailwindcss -i ./src/frontend/styles.css -o ./src/static/app.css --minify",
     "build": "bun run build:js && bun run build:css",
-    "watch:js": "esbuild frontend/main.js --bundle --sourcemap --outfile=static/app.js --watch",
-    "watch:css": "bunx tailwindcss -i ./frontend/styles.css -o ./static/app.css --watch",
+    "watch:js": "esbuild src/frontend/main.js --bundle --sourcemap --outfile=src/static/app.js --watch",
+    "watch:css": "bunx tailwindcss -i ./src/frontend/styles.css -o ./src/static/app.css --watch",
     "watch": "concurrently \"bun run watch:js\" \"bun run watch:css\"",
     "dev": "nodemon --watch src --ext ts,js,json,ejs --exec ts-node --transpile-only src/app.ts",
     "start": "bun run build && bun run dev"

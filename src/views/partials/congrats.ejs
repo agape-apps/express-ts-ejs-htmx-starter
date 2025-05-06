@@ -1,33 +1,34 @@
-<p> Congratulations! You have successfully setup express-ts-ejs-htmx. </p>
+<div class="p-4">
+    <p class="mb-4"> Congratulations! You have successfully setup express-ts-ejs-htmx. </p>
 
-<%
-switch (counter) {
-    case '1': %>
-    <button type="button" hx-get="/congrats/2" hx-swap="outerHTML"> Well Done. </button>
-    <% break %>
-  
-    <% case '2': %>
-    <button type="button" hx-get="/congrats/3" hx-swap="outerHTML"> Seems to work pretty well, right? </button>
-    <% break %>
-
-    <% case '3': %>
-    <button type="button" hx-get="/congrats/4" hx-swap="outerHTML"> Don't overdo it. </button>
-    <% break %>
-
-    <% case '4': %>
-    <p id="fade-me-in" hx-get='/congrats/5' hx-swap='innerHTML settle:1s'>
-        Told you. See how smooth this was though? 😎
-    </p>
-    <% break %>
-
-    <% case '5': %>
-    <p> Okay, now you got me. I'm out of ideas. Have fun! </p>
-    <% break %>
-  
-    <% default: %>
-      <p><%= counter %>. I see. You found the default case. Good job.</p>
-  <% } %>
-
+    <%
+    switch (counter) {
+        case '1': %>
+        <button type="button" hx-get="/congrats/2" hx-swap="outerHTML" class="btn btn-secondary"> Well Done. </button>
+        <% break %>
+      
+        <% case '2': %>
+        <button type="button" hx-get="/congrats/3" hx-swap="outerHTML" class="btn btn-accent"> Seems to work pretty well, right? </button>
+        <% break %>
+    
+        <% case '3': %>
+        <button type="button" hx-get="/congrats/4" hx-swap="outerHTML" class="btn btn-warning"> Don't overdo it. </button>
+        <% break %>
+    
+        <% case '4': %>
+        <p id="fade-me-in" hx-get='/congrats/5' hx-swap='innerHTML settle:1s' class="text-lg">
+            Told you. See how smooth this was though? 😎
+        </p>
+        <% break %>
+    
+        <% case '5': %>
+        <p class="text-lg"> Okay, now you got me. I'm out of ideas. Have fun! </p>
+        <% break %>
+      
+        <% default: %>
+          <p class="text-error"><%= counter %>. I see. You found the default case. Good job.</p>
+      <% } %>
+</div>
 <style>
     #fade-me-in.htmx-added {
     opacity: 0;

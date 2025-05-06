@@ -7,6 +7,9 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// Serve static files from the "static" directory
+app.use('/static', express.static(path.join(__dirname, 'static')));
+
 // Render your views
 app.get('/', (req: Request, res: Response) => {
   res.render('index', { title: 'HTMX-Starter' });
