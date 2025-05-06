@@ -1070,29 +1070,6 @@
       box-shadow: 0 2px 3px -1px color-mix(in oklab, currentColor calc(var(--depth) * 100%), #0000) !important;
     }
   }
-  .footer {
-    display: grid;
-    width: 100%;
-    grid-auto-flow: row;
-    place-items: start;
-    column-gap: calc(0.25rem * 4);
-    row-gap: calc(0.25rem * 10);
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    & > * {
-      display: grid;
-      place-items: start;
-      gap: calc(0.25rem * 2);
-    }
-    &.footer-center {
-      grid-auto-flow: column dense;
-      place-items: center;
-      text-align: center;
-      & > * {
-        place-items: center;
-      }
-    }
-  }
   .mask {
     display: inline-block;
     vertical-align: middle;
@@ -1108,22 +1085,6 @@
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
-  .link {
-    cursor: pointer;
-    text-decoration-line: underline;
-    &:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-      @media (forced-colors: active) {
-        outline: 2px solid transparent;
-        outline-offset: 2px;
-      }
-    }
-    &:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 2px;
-    }
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);

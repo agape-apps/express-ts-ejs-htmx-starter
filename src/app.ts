@@ -1,10 +1,18 @@
 import express, { Request, Response } from 'express';
 import path from 'path';
+import reactViews from 'express-react-views';
 
 const app = express();
 
-// Set the view engine to EJS
-app.set('view engine', 'ejs');
+// Set the view engine to JSX
+app.set('view engine', 'tsx');
+app.engine('tsx', reactViews.createEngine({
+  babel: {
+    presets: ['@babel/preset-react', ['@babel/preset-env', { targets: { node: 'current' } }]],
+    plugins: ['styled-jsx/babel'],
+  },
+}));
+
 
 // Views Configuration
 const viewsPath = path.join(process.cwd(), 'src', 'views');
@@ -20,7 +28,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.get('/congrats/:counter', (req: Request, res: Response) => {
-    res.render('partials/congrats', { title: 'Congrats!', counter: req.params.counter});
+    res.render('partials/Congrats', { title: 'Congrats!', counter: req.params.counter}); // Note: Component name likely capitalized
   });
 
 // Start the server
