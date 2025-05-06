@@ -6,12 +6,17 @@
   "scripts": {
     "build:js": "esbuild src/frontend/main.js --bundle --minify --sourcemap --outfile=src/static/app.js",
     "build:css": "bunx tailwindcss -i ./src/frontend/styles.css -o ./src/static/app.css --minify",
-    "build": "bun run build:js && bun run build:css",
+    "build:frontend": "bun run build:js && bun run build:css",
+    "build:backend": "tsc --project tsconfig.json && esbuild dist/app.js --bundle --platform=node --outfile=server/server.js",
+    "build": "bun run build:frontend && bun run build:backend",
+    "serve": "bun run build && node server/server.js",
+    "build:production": "bun run build && rm -rf production && mkdir -p production/server production/src/static production/src/views && cp src/static/app.css production/src/static/ && cp src/static/app.js production/src/static/ && cp -r src/views/* production/src/views/ && cp server/server.js production/server/ && [ -f .env ] && cp .env production/",
+    "serve:production": "bun run build:production && node production/server/server.js",
     "watch:js": "esbuild src/frontend/main.js --bundle --sourcemap --outfile=src/static/app.js --watch",
     "watch:css": "bunx tailwindcss -i ./src/frontend/styles.css -o ./src/static/app.css --watch",
-    "watch": "concurrently \"bun run watch:js\" \"bun run watch:css\"",
-    "dev": "nodemon --watch src --ext ts,js,json,ejs --exec ts-node --transpile-only src/app.ts",
-    "start": "bun run build && bun run dev"
+    "watch:frontend": "concurrently \"bun run watch:js\" \"bun run watch:css\"",
+    "watch:backend": "nodemon --watch src --ext ts,js,json,ejs --exec ts-node src/app.ts",
+    "dev": "concurrently \"bun run watch:js\" \"bun run watch:css\" \"bun run watch:backend\""
   },
   "dependencies": {
     "ejs": "^3.1.10",
