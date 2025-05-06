@@ -13,8 +13,8 @@ app.engine('tsx', reactViews.createEngine({
       '@babel/preset-react',
       ['@babel/preset-env', { targets: { node: 'current' } }],
     ],
-    plugins: ['styled-jsx/babel'],
-    extensions: ['.tsx', '.jsx'], // Restrict runtime Babel to only these extensions
+    plugins: [],
+    extensions: ['.tsx'], // Restrict runtime Babel to only these extensions
   },
 }));
 

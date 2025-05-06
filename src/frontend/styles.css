@@ -1,16 +1,7 @@
 @import "tailwindcss";
 
-/* Load all themes for easy dev testing in base.templ */
+/* Load all themes for easy dev testing in Layout.tsx */
 @plugin "daisyui" {
   themes: all;
 }
 
-
-/* Styles for HTMX fade-in effect */
-#fade-me-in.htmx-added {
-  opacity: 0;
-}
-#fade-me-in {
-  opacity: 1;
-  transition: opacity 1.5s ease-out;
-}

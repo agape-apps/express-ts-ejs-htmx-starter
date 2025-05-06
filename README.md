@@ -93,7 +93,6 @@ pm2 save
 * **express-react-views**: Used in src/app.ts.
 * **react**: Used for .tsx views and by express-react-views.
 * **react-dom**: Used for .tsx views and by express-react-views.
-* **styled-jsx**: Used as a Babel plugin in src/app.ts.
 * **@babel/preset-typescript**: Used as a Babel preset in src/app.ts.
 * **@types/express**: Used for type definitions in src/app.ts.
 * **@types/node**: Used for type definitions in src/app.ts.
