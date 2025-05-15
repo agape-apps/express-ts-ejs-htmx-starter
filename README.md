@@ -1,6 +1,8 @@
 # Express - TypeScript - JSX - HTMX - TailwindCSS/DaisyUI - Starter 🚀
 A minimalistic node starter application for getting into HTMX.
 
+**This is the JSX Version. Switch to the ejs-version branch to see that version.**
+
 ---
 
 ### Setup Guide
@@ -60,6 +62,7 @@ production/
 │   │   └── app.js       
 │   └── views/           # EJS templates
 └── .env                 # Environment variables (if needed)
+
 ├── package.json         # For dependencies not bundled with esbuild (optional, check)
 └── node_modules/        # Installed dependencies not bundled (optional, check)
 ```
