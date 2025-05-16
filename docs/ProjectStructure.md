@@ -1,16 +1,22 @@
 # Node.js/Express File System Structure
+
 ## with TypeScript, JSX, HTMX and TailwindCSS
+
+TODO: rethink directory structrue for frontend, static, server, dist and production for clearer separation between compiled/generated code and dev vs production. Also .env for production.  Simplify where possible. Also think of CI/DI setup. Check .gitignore as well. See [Proposed Improvements](https://claude.ai/public/artifacts/b184d17e-6477-4f63-bce1-dbb6068ab293) 
 
 Here's a typical file structure for a Node/Express application using TypeScript with JSX templates for HTMX and TailwindCSS:
 
 ```
 project-root/
 ├── node_modules/              # Dependencies installed via npm
-├── public/                    # Static assets (can also be in src/public)
-│   ├── css/                   # Compiled CSS including Tailwind output
-│   ├── js/                    # Client-side JavaScript
-│   └── images/                # Image assets
+├── static/                    # Static assets (can also be in public)
+│   ├── app.css                # Compiled CSS including Tailwind output
+│   ├── app.js                 # Compiled client-side JavaScript including HTMX
+│   └── images/                # Image assets (could also be under frontend)
 ├── src/                       # TypeScript source code
+│   ├── frontend/              # 
+│   │   ├── main.js            # Import javascript libraries like Htmx and Alpine
+│   │   └── styles.css         # Import TailwindCSS and DaisyUI
 │   ├── config/                # Configuration files
 │   │   ├── database.ts        # Database configuration
 │   │   └── server.ts          # Server configuration
@@ -36,7 +42,7 @@ project-root/
 │   │   └── pages/             # Page templates
 │   │       ├── Home.tsx
 │   │       └── About.tsx
-│   ├── app.ts                 # Express application setup
+│   ├── app.ts                 # Express application setup (can also be entry point)
 │   └── index.ts               # Entry point
 ├── tests/                     # Test files
 │   ├── unit/
@@ -55,6 +61,7 @@ project-root/
   * `tsconfig.json` for TypeScript configuration
   * `.ts` and `.tsx` extensions for TypeScript and JSX files
   * `dist/` folder for compiled output
+  
 * **JSX with HTMX**:
   * `views/` directory structured to hold JSX templates
   * Components are organized to work with HTMX patterns

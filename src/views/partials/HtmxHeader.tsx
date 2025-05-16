@@ -9,7 +9,7 @@ const HtmxHeader: React.FC<HtmxHeaderProps> = ({ title }) => {
     <>
       <meta charSet="UTF-8" />
       <title>{title}</title>
-      {/* HTMX is bundled in app.js */}
+      {/* HTMX is bundled in /static/app.js */}
       <script src="/static/app.js" defer></script>
       <link rel="stylesheet" href="/static/app.css" />
     </>

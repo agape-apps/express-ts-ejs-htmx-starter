@@ -92,6 +92,8 @@ pm2 save
 
 ## All devDependencies listed in package.json
 
+Here React is only used on the server to transform the JSX templates into html. It is not loaded in the client.
+
 * **express**: Used in src/app.ts.
 * **express-react-views**: Used in src/app.ts.
 * **react**: Used for .tsx views and by express-react-views.
