@@ -1,7 +1,14 @@
-@import "tailwindcss";
+/* Custom styles to supplement Bulma */
+/* Note: Bulma is loaded separately in the HTML head */
 
-/* Load all themes for easy dev testing in base.templ */
-@plugin "daisyui" {
-  themes: all;
+/* Fade effect for HTMX transitions */
+#fade-me-in.htmx-added {
+  opacity: 0;
 }
 
+#fade-me-in {
+  opacity: 1;
+  transition: opacity 1.5s ease-out;
+}
+
+/* Additional custom styles can be added here */

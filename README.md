@@ -1,4 +1,4 @@
-# Express - JavaScript - EJS - HTMX - Bulma CSS - Starter 🚀
+# Express - TypeScript - EJS - HTMX - Bulma CSS - Starter 🚀
 A minimalistic node starter application for getting into HTMX.
 
 **This is the EJS Version. Switch to the main branch to see the JSX version.**
@@ -10,7 +10,7 @@ A minimalistic node starter application for getting into HTMX.
 1. Make sure you have [Node.js](https://nodejs.org/en/download) and [Git](https://git-scm.com/downloads) and Bun installed on your machine.
 2. Open a terminal and clone this repository (alternatively download zip).
 ```
-git clone 
+git clone
 ```
 3. **cd** into the project folder
 ```
@@ -29,6 +29,7 @@ bun run dev
 ### Other resources
 
 - [HTMX Documentation](https://htmx.org/docs/)
+- [Bulma Documentation](https://bulma.io/documentation/)
 
 ---
 
@@ -50,8 +51,9 @@ production/
 │   └── server.js        # Your bundled application including most node_modules
 ├── src/
 │   ├── static/          # Frontend assets
-│   │   ├── app.css      
-│   │   └── app.js       
+│   │   ├── app.css      # Custom styles
+│   │   ├── bulma.min.css # Bulma CSS framework
+│   │   └── app.js       # Bundled JavaScript with HTMX
 │   └── views/           # EJS templates
 └── .env                 # Environment variables (if needed)
 ├── package.json         # For dependencies not bundled with esbuild (optional, check)

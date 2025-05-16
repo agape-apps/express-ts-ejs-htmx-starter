@@ -1,40 +1,31 @@
-<div class="p-4">
-    <p class="mb-4"> Congratulations! You have successfully setup express-ts-ejs-htmx. </p>
+<div class="box">
+    <p class="mb-4"> Congratulations! You have successfully setup express-ts-ejs-htmx with Bulma. </p>
 
     <%
     switch (counter) {
         case '1': %>
-        <button type="button" hx-get="/congrats/2" hx-swap="innerHTML" hx-target="#content-swap" class="btn btn-secondary"> Well Done. </button>
+        <button type="button" hx-get="/congrats/2" hx-swap="innerHTML" hx-target="#content-swap" class="button is-info"> Well Done. </button>
         <% break %>
-      
+
         <% case '2': %>
-        <button type="button" hx-get="/congrats/3" hx-swap="innerHTML" hx-target="#content-swap" class="btn btn-accent"> Seems to work pretty well, right? </button>
+        <button type="button" hx-get="/congrats/3" hx-swap="innerHTML" hx-target="#content-swap" class="button is-success"> Seems to work pretty well, right? </button>
         <% break %>
-    
+
         <% case '3': %>
-        <button type="button" hx-get="/congrats/4" hx-swap="innerHTML" hx-target="#content-swap" class="btn btn-warning"> Don't overdo it. </button>
+        <button type="button" hx-get="/congrats/4" hx-swap="innerHTML" hx-target="#content-swap" class="button is-warning"> Don't overdo it. </button>
         <% break %>
-    
+
         <% case '4': %>
-        <p id="fade-me-in" hx-get='/congrats/5' hx-swap='innerHTML settle:1s' hx-target="#content-swap" class="text-lg">
+        <p id="fade-me-in" hx-get='/congrats/5' hx-swap='innerHTML settle:1s' hx-target="#content-swap" class="is-size-5">
             Told you. See how smooth this was though? 😎
         </p>
         <% break %>
-    
+
         <% case '5': %>
-        <p class="text-lg"> Okay, now you got me. I'm out of ideas. Have fun! </p>
+        <p class="is-size-5"> Okay, now you got me. I'm out of ideas. Have fun! </p>
         <% break %>
-      
+
         <% default: %>
-          <p class="text-error"><%= counter %>. I see. You found the default case. Good job.</p>
+          <p class="has-text-danger"><%= counter %>. I see. You found the default case. Good job.</p>
       <% } %>
 </div>
-<style>
-    #fade-me-in.htmx-added {
-    opacity: 0;
-    }
-    #fade-me-in {
-    opacity: 1;
-    transition: opacity 1.5s ease-out;
-    }
-</style>
