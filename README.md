@@ -1,4 +1,4 @@
-# Express - TypeScript - EJS - HTMX - TailwindCSS/DaisyUI - Starter 🚀
+# Express - JavaScript - EJS - HTMX - Bulma CSS - Starter 🚀
 A minimalistic node starter application for getting into HTMX.
 
 **This is the EJS Version. Switch to the main branch to see the JSX version.**
