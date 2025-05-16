@@ -1,5 +1,5 @@
-import express, { Request, Response } from 'express';
-import path from 'path';
+const express = require('express');
+const path = require('path');
 
 const app = express();
 
@@ -15,13 +15,13 @@ const staticPath = path.join(process.cwd(), 'src', 'static');
 app.use('/static', express.static(staticPath));
 
 // Render your views
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (req, res) => {
   res.render('index', { title: 'HTMX-Starter' });
 });
 
-app.get('/congrats/:counter', (req: Request, res: Response) => {
-    res.render('partials/congrats', { title: 'Congrats!', counter: req.params.counter});
-  });
+app.get('/congrats/:counter', (req, res) => {
+  res.render('partials/congrats', { title: 'Congrats!', counter: req.params.counter});
+});
 
 // Start the server
 app.listen(3000, () => {

@@ -1,13 +1,13 @@
 {
-  "name": "express-ts-ejs-htmx",
+  "name": "express-js-ejs-htmx",
   "version": "1.0.0",
-  "main": "src/app.ts",
+  "main": "src/app.js",
   "license": "MIT",
   "scripts": {
     "build:js": "esbuild src/frontend/main.js --bundle --minify --sourcemap --outfile=src/static/app.js",
     "build:css": "cp node_modules/bulma/css/bulma.min.css src/static/bulma.min.css && esbuild src/frontend/styles.css --bundle --minify --outfile=src/static/app.css",
     "build:frontend": "bun run build:js && bun run build:css",
-    "build:backend": "tsc --project tsconfig.json && esbuild dist/app.js --bundle --platform=node --outfile=server/server.js",
+    "build:backend": "mkdir -p server && esbuild src/app.js --bundle --platform=node --outfile=server/server.js",
     "build": "bun run build:frontend && bun run build:backend",
     "serve": "bun run build && node server/server.js",
     "build:production": "bun run build && rm -rf production && mkdir -p production/server production/src/static production/src/views && cp src/static/app.css production/src/static/ && cp src/static/bulma.min.css production/src/static/ && cp src/static/app.js production/src/static/ && cp -r src/views/* production/src/views/ && cp server/server.js production/server/ && cp .env production/",
@@ -15,25 +15,21 @@
     "watch:js": "esbuild src/frontend/main.js --bundle --sourcemap --outfile=src/static/app.js --watch",
     "watch:css": "cp node_modules/bulma/css/bulma.min.css src/static/bulma.min.css && esbuild src/frontend/styles.css --bundle --outfile=src/static/app.css --watch",
     "watch:frontend": "concurrently \"bun run watch:js\" \"bun run watch:css\"",
-    "watch:backend": "nodemon --watch src --ext ts,js,json,ejs --exec ts-node src/app.ts",
+    "watch:backend": "nodemon --watch src --ext js,json,ejs src/app.js",
     "dev": "concurrently \"bun run watch:js\" \"bun run watch:css\" \"bun run watch:backend\""
   },
   "dependencies": {},
   "devDependencies": {
     "ejs": "^3.1.10",
     "express": "^4.21.2",
-    "@types/express": "^4.17.21",
-    "@types/node": "^22.15.12",
     "alpinejs": "^3.14.9",
     "bulma": "^1.0.4",
     "concurrently": "^9.1.2",
     "esbuild": "^0.25.4",
     "htmx.org": "^1.9.12",
-    "nodemon": "^3.1.10",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "nodemon": "^3.1.10"
   },
   "nodemonConfig": {
-    "ext": "js,ts,json,ejs"
+    "ext": "js,json,ejs"
   }
 }

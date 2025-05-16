@@ -1,4 +1,4 @@
-# Express - TypeScript - EJS - HTMX - Bulma CSS - Starter 🚀
+# Express - JavaScript - EJS - HTMX - Bulma CSS - Starter 🚀
 A minimalistic node starter application for getting into HTMX.
 
 **This is the EJS Version. Switch to the main branch to see the JSX version.**
@@ -14,7 +14,7 @@ git clone
 ```
 3. **cd** into the project folder
 ```
-cd express-ts-ejs-htmx-starter
+cd express-js-ejs-htmx-starter
 ```
 4. Install the packages with **bun**
 ```
@@ -73,7 +73,7 @@ bashnpm install -g pm2
 
 2. Start your application:
 ```
-bashpm2 start dist/server.js --name "your-app-name"
+bashpm2 start server/server.js --name "your-app-name"
 ```
 
 3. Ensure it starts on system reboot:
