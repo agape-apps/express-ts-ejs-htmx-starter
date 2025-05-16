@@ -1,6 +1,8 @@
 # Express - TypeScript - EJS - HTMX - TailwindCSS/DaisyUI - Starter 🚀
 A minimalistic node starter application for getting into HTMX.
 
+**This is the EJS Version. Switch to the main branch to see the JSX version.**
+
 ---
 
 ### Setup Guide
@@ -36,8 +38,8 @@ bun run dev
 
 **Build for production**
 ```
-bun run build
-bun run serve
+bun run build:production
+bun run serve:production
 ```
 
 The minimal set of files and directories needed on your production server:
